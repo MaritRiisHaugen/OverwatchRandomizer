@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Overwatch Heroes Randomized</title>
+</head>
+
+<body>
+    
+    <h1 id="octoberWatch">OctoberWatch</h1>
+    <h3>So you want to draw all the current Overwatch heroes, but you want them randomized?</h3>
+    <h3>Well boy can I do that for you! Just click this button!</h3>
+    <button id="randomHero">Randomize Heroes</button>
+    <h3 id="heroList"></h3>
+    <h3 id="onClicked"></h3>
+    
+</body>
+    
+<script>
+   
+    
+    // init ---------------------
+    
+    var randomHero = document.getElementById("randomHero");
+    var heroList = document.getElementById("heroList");
+    var onClicked = document.getElementById("onClicked");
+    
+    
+    var hero = ["Doomfist", "Genji", "McCree", "Pharah", "Reaper", "Soldier76", "Sombra", "Tracer", "Bastion", "Hanzo", "Junkrat", "Mei", "Torbjorn", "Widowmaker", "D.Va", "Orisa", "Reinhardt", "Roadhog", "Winston", "Zarya", "Ana", "Lucio", "Mercy", "Symmetra", "Zenyatta"];
+    
+    randomHero.onclick = randomize;
+    
+
+    // randomize ------------------
+    
+    function randomize (){
+        
+        for (var j = 0; j < 25; j++){
+        
+            var random = Math.floor(Math.random()*(hero.length));
+            var i = j + 1; 
+            heroList.innerHTML += "<br>" + i + " " + hero[random];
+            hero.splice(random, 1);
+        
+        }
+        
+        onClicked.innerHTML = "<br>" + "There you go! Have fun drawing! :D";
+    }
+    
+
+    
+</script>
+    
+</html>
+
+
+
